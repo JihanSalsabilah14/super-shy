@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Super shy</title>
+    <style>
+      body {
+        text-align: center;
+        background-image: url("bg.jpg"); /* Path gambar background */
+        background-size: cover; /* Menyesuaikan gambar dengan ukuran layar */
+        background-position: center; /* Menempatkan gambar di tengah */
+        background-repeat: no-repeat; /* Mencegah gambar berulang */
+      }
+
+      #photo,
+      #audio {
+        display: none;
+      }
+
+      #content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh; /* Memenuhi tinggi layar */
+      }
+
+      button {
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <button onclick="showContent()">Klik coba bang</button>
+
+    <div id="content">
+      <img id="photo" src="gambar.jpg" alt="Displayed Photo" width="400" />
+      <audio id="audio" controls>
+        <source src="audio.mp3" type="audio/mpeg" />
+      </audio>
+    </div>
+
+    <script>
+      function showContent() {
+        document.getElementById("photo").style.display = "block";
+        const audioElement = document.getElementById("audio");
+        audioElement.style.display = "block";
+        audioElement.play();
+      }
+    </script>
+  </body>
+</html>
